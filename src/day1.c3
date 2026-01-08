@@ -4,6 +4,8 @@ import std::collections;
 import std::core::string;
 import std::core::dstring;
 
+typedef Dial = inline int;
+
 enum Direction : int {
     LEFT,
     RIGHT,
@@ -21,14 +23,14 @@ fn Turn make_turn(Direction dir, int steps) @private {
     return turn;
 }
 
-fn List{Turn} parse(String input) {
+fn List{Turn} parse(String data) {
     List{Turn} turns;
     turns.init(mem);
 
     Direction dir;
     DString dnumber = dstring::temp();
 
-    foreach (index, char c : input) {
+    foreach (index, char c : data) {
         switch (c) {
             case 'L':
                 dir = Direction.LEFT;
@@ -47,4 +49,6 @@ fn List{Turn} parse(String input) {
     return turns;
 }
 
+fn void part1(String data) {
 
+}
