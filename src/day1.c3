@@ -3,8 +3,8 @@ module day1;
 import std::collections;
 import std::core::string;
 import std::core::dstring;
-
-typedef Dial = inline int;
+import std::io;
+import std::math;
 
 enum Direction : int {
     LEFT,
@@ -49,6 +49,27 @@ fn List{Turn} parse(String data) {
     return turns;
 }
 
-fn void part1(String data) {
+fn int part1(String data = DATA) {
+    List{Turn} turns = parse(data);
+    defer turns.free();
 
+    int dial = 50;
+    int zeros = 0;
+
+    foreach (Turn turn : turns) {
+        switch (turn.dir) {
+            case Direction.LEFT:
+                dial = dial - turn.steps;
+            case Direction.RIGHT:
+                dial = dial + turn.steps;
+        }
+
+        dial = ((dial % 100) + 100) % 100;
+
+        if (dial == 0) {
+            zeros++;
+        }
+    }
+
+    return zeros;
 }

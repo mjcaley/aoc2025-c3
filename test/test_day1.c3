@@ -50,3 +50,8 @@ fn void test_parse() @test {
     assert(turns[9].dir == Direction.LEFT);
     assert(turns[9].steps == 82);
 }
+
+fn void test_part1() @test {
+	int result = part1(TEST_INPUT);
+	assert(result == 3);
+}
