@@ -73,3 +73,39 @@ fn int part1(String data = DATA) {
 
     return zeros;
 }
+
+fn int part2(String data = DATA) {
+    List{Turn} turns = parse(data);
+    defer turns.free();
+
+    int dial = 50;
+    int zeros = 0;
+
+    foreach (Turn turn : turns) {
+
+        zeros += turn.steps / 100;
+        int normalized_turn = turn.steps % 100;
+
+        int new_dial = dial;
+        switch (turn.dir) {
+            case Direction.LEFT:
+                new_dial = dial - normalized_turn;
+            case Direction.RIGHT:
+                new_dial = dial + normalized_turn;
+        }
+
+        if (new_dial == 0) {
+            zeros++;
+        }
+        else if (turn.dir == Direction.LEFT && new_dial < 0 && math::abs(new_dial) - normalized_turn < 0) {
+            zeros++;
+        }
+        else if (turn.dir == Direction.RIGHT && new_dial >= 100 && math::abs(new_dial) - normalized_turn > 0){
+            zeros++;
+        }
+        
+        dial = ((new_dial % 100) + 100) % 100;
+    }
+
+    return zeros;
+}
