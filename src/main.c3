@@ -20,14 +20,20 @@ fn int main(String[] args)
 					io::printfn("Day 1, Part 1: %d", day1::part1());
 				case "2":
 					io::printfn("Day 1, Part 2: %d", day1::part2());
+				default:
+					io::printfn("Unknown part: %s", part);
 			}
 		case "2":
 			switch (part) {
 				case "1":
 					io::printfn("Day 2, Part 1: %d", day2::part1(day2::DATA));
-				// case "2":
-				// 	io::printfn("Day 2, Part 2: %d", day2::part2(day2::DATA));
+				case "2":
+					io::printfn("Day 2, Part 2: %d", day2::part2(day2::DATA));
+				default:
+					io::printfn("Unknown part: %s", part);
 			}
+		default:
+			io::printfn("Unknown day: %s", day);
 	}
 
     return 0;
