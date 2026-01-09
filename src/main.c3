@@ -1,6 +1,7 @@
 module aoc2025;
 import std::io;
 import day1;
+import day2;
 
 fn int main(String[] args)
 {
@@ -19,6 +20,13 @@ fn int main(String[] args)
 					io::printfn("Day 1, Part 1: %d", day1::part1());
 				case "2":
 					io::printfn("Day 1, Part 2: %d", day1::part2());
+			}
+		case "2":
+			switch (part) {
+				case "1":
+					io::printfn("Day 2, Part 1: %d", day2::part1(day2::DATA));
+				// case "2":
+				// 	io::printfn("Day 2, Part 2: %d", day2::part2(day2::DATA));
 			}
 	}
 
