@@ -3,7 +3,8 @@ module day2;
 import std::io;
 
 fn long invalid_id(long id) {
-    String id_str = string::tformat("%d", id);
+    String id_str = string::format(mem, "%d", id);
+    defer id_str.free(mem);
     usz len = id_str.len;
     if (len % 2 != 0) {
         return 0;
