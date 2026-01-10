@@ -52,12 +52,12 @@ fn void test_parse() @test {
 }
 
 fn void test_part1() @test {
-	int result = part1(TEST_INPUT);
-	assert(result == 3);
+    int result = part1(TEST_INPUT);
+    assert(result == 3);
 }
 
 fn void test_part2() @test {
-	int result = part2(TEST_INPUT);
-	io::printfn("Test Part 2 Result: %d", result);
-	assert(result == 6);
+    int result = part2(TEST_INPUT);
+    io::printfn("Test Part 2 Result: %d", result);
+    assert(result == 6);
 }

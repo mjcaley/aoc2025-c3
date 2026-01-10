@@ -1,17 +1,16 @@
 module day2 @test;
 
-import std::collections;
 import std::io;
 
 const String TEST_INPUT = "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,1698522-1698528,446443-446449,38593856-38593862,565653-565659,824824821-824824827,2121212118-2121212124";
 
 fn void test_part1() @test {
-	long result = part1(TEST_INPUT);
-	assert(result == 1227775554);
+    long result = part1(TEST_INPUT);
+    assert(result == 1227775554);
 }
 
 fn void test_part2() @test {
-	long result = part2(TEST_INPUT);
-	io::printfn("Test Part 2 Result: %d", result);
-	assert(result == 4174379265);
+    long result = part2(TEST_INPUT);
+    io::printfn("Test Part 2 Result: %d", result);
+    assert(result == 4174379265);
 }
