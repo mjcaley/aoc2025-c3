@@ -2,9 +2,8 @@ module day2;
 
 import std::io;
 
-fn long invalid_id(long id) {
-    String id_str = string::format(mem, "%d", id);
-    defer id_str.free(mem);
+fn long invalid_id(long id) => @pool() {
+    String id_str = string::tformat("%d", id);
     usz len = id_str.len;
     if (len % 2 != 0) {
         return 0;
@@ -20,9 +19,8 @@ fn long invalid_id(long id) {
     return 0;
 }
 
-fn long invalid_id_multipart(long id) {
-    String id_str = string::format(mem, "%d", id);
-    defer id_str.free(mem);
+fn long invalid_id_multipart(long id) => @pool() {
+    String id_str = string::tformat("%d", id);
     usz len = id_str.len;
     
     for (usz chunk = 1; chunk <= len / 2; chunk++) {
