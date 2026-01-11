@@ -29,3 +29,26 @@ fn int part1(String data) {
 
     return total_joltage;
 }
+
+fn long part2(String data) {
+	long total_joltage = 0;
+
+	foreach (String bank : data.tsplit("\n")) {
+		char[12] joltage_str;
+
+		usz lower_window = 0;
+		usz upper_window = bank.len - 12;
+
+		for (usz i = 0; i < 12; i++) {
+			pair::Pair{usz, char} best_integer = max_integer(bank[lower_window..upper_window]);
+			joltage_str[i] = best_integer.second;
+			lower_window += max(1 + best_integer.first, 1);
+			upper_window += 1;
+		}
+
+		long joltage = ((String)joltage_str[..]).to_integer(long)!!;
+		total_joltage += joltage;
+	}
+
+	return total_joltage;
+}
