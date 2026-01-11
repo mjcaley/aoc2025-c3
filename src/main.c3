@@ -3,6 +3,7 @@ import std::io;
 import day1;
 import day2;
 import day3;
+import day4;
 
 fn int main(String[] args)
 {
@@ -39,6 +40,15 @@ fn int main(String[] args)
 					io::printfn("Day 3, Part 1: %d", day3::part1(day3::DATA));
 				case "2":
 				    io::printfn("Day 3, Part 2: %d", day3::part2(day3::DATA));
+				default:
+					io::printfn("Unknown part: %s", part);
+			}
+		case "4":
+			switch (part) {
+				case "1":
+					io::printfn("Day 4, Part 1: %d", day4::part1(day4::DATA));
+				// case "2":
+				//     io::printfn("Day 4, Part 2: %d", day4::part2(day4::DATA));
 				default:
 					io::printfn("Unknown part: %s", part);
 			}
