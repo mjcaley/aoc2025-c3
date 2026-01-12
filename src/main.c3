@@ -47,8 +47,8 @@ fn int main(String[] args)
 			switch (part) {
 				case "1":
 					io::printfn("Day 4, Part 1: %d", day4::part1(day4::DATA));
-				// case "2":
-				//     io::printfn("Day 4, Part 2: %d", day4::part2(day4::DATA));
+				case "2":
+				    io::printfn("Day 4, Part 2: %d", day4::part2(day4::DATA));
 				default:
 					io::printfn("Unknown part: %s", part);
 			}
