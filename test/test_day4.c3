@@ -28,3 +28,9 @@ fn void test_part1() @test {
 	io::printfn("Test Part 1 Result: %d", result);
 	assert(result == 13);
 }
+
+fn void test_part2() @test {
+	int result = part2(TEST_DATA);
+	io::printfn("Test Part 2 Result: %d", result);
+	assert(result == 43);
+}
