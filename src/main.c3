@@ -4,6 +4,7 @@ import day1;
 import day2;
 import day3;
 import day4;
+import day5;
 
 fn int main(String[] args)
 {
@@ -49,6 +50,15 @@ fn int main(String[] args)
 					io::printfn("Day 4, Part 1: %d", day4::part1(day4::DATA));
 				case "2":
 				    io::printfn("Day 4, Part 2: %d", day4::part2(day4::DATA));
+				default:
+					io::printfn("Unknown part: %s", part);
+			}
+		case "5":
+			switch (part) {
+				case "1":
+					io::printfn("Day 5, Part 1: %d", day5::part1(day5::DATA));
+				// case "2":
+				//     io::printfn("Day 5, Part 2: %d", day5::part2(day5::DATA));
 				default:
 					io::printfn("Unknown part: %s", part);
 			}
